@@ -5,7 +5,6 @@ angular.module('angular-hover-spy-example')
     '$rootScope',
     '$scope',
     function ($rootScope, $scope) {
-      console.log($rootScope.$$listeners);
       $scope.message = 'I mirror the other elements hover effects!';
       $rootScope.$on('abramz.custom-handler:hover-spy-mouseenter', function () {
         $scope.message = 'You have to be really fast to see this!!';
