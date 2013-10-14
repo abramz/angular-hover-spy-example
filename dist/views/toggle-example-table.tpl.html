@@ -1,14 +1,14 @@
 <table class="table table-bordered table-hover" ng-controller="ToggleExampleTableCtrl">
   <thead>
     <tr>
-      <th ng-repeat="attribute in attributes" hover-spy="toggle{{$index}}" hover-spy-toggle="label-primary">
+      <th ng-repeat="attribute in attributes" hover-spy="" hover-spy-namespace="toggle{{$index}}" hover-spy-toggle="label-primary">
         {{ attribute.value }}
       </th>
     </tr>
   </thead>
   <tbody>
     <tr ng-repeat="summoner in summoners">
-      <td ng-repeat="attribute in attributes" hover-spy="toggle{{$index}}" hover-spy-toggle="success">
+      <td ng-repeat="attribute in attributes" hover-spy="" hover-spy-namespace="toggle{{$index}}" hover-spy-toggle="success">
         {{ summoner[attribute.key] }}
       </td>
     </tr>

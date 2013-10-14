@@ -37,14 +37,14 @@
 &lt;table class="table table-bordered table-hover" ng-controller="ToggleExampleTableCtrl"&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th ng-repeat="attribute in attributes" hover-spy="toggle{{$index}}" hover-spy-toggle="label-primary"&gt;
+      &lt;th ng-repeat="attribute in attributes" hover-spy hover-spy-namespace="toggle{{$index}}" hover-spy-toggle="label-primary"&gt;
         {{ attribute.value }}
       &lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr ng-repeat="summoner in summoners"&gt;
-      &lt;td ng-repeat="attribute in attributes" hover-spy="toggle{{$index}}" hover-spy-toggle="success"&gt;
+      &lt;td ng-repeat="attribute in attributes" hover-spy hover-spy-namespace="toggle{{$index}}" hover-spy-toggle="success"&gt;
         {{ summoner[attribute.key] }}
       &lt;/td&gt;
     &lt;/tr&gt;

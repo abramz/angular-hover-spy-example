@@ -25,11 +25,11 @@
     "test",
     "***/.*"
   ],
-  "_release": "b7ab7cf564",
+  "_release": "538d2c25d4",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "b7ab7cf564b511ad06ef9d486eeaaf63b4deba54"
+    "commit": "538d2c25d49918ae7477903fe17d5fb325033606"
   },
   "_source": "https://github.com/abramz/angular-hover-spy.git",
   "_target": "*",
