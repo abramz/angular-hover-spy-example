@@ -7,7 +7,8 @@
     "angular-bootstrap": "~0.6.0",
     "angular-ui-router": "~0.2.0",
     "angular": "v1.2.0-rc.2",
-    "angular-sanitize": "v1.2.0-rc.2"
+    "angular-sanitize": "v1.2.0-rc.2",
+    "angular-hover-spy": "https://github.com/abramz/angular-hover-spy.git"
   },
   "devDependencies": {
     "angular-mocks": "v1.2.0-rc.2",
