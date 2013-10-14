@@ -1,0 +1,110 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="page-header">
+      <h2>Custom Handler Example</h2>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+              <div class="page-header">
+                <h3>The Example</h3>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12" ui-view="listener@customHandler"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+              <div class="page-header">
+                <h3>The Source</h3>
+              </div>
+          </div>
+        </div>
+        <tabset>
+          <tab heading="Markup">
+            <pre class="prettyprint linenums" ng-non-bindable="">
+              <code class="language-html">
+&lt;div class="row"&gt;
+  &lt;div class="col-md-12"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col-md-12 well well-small" hover-spy="custom-handler" hover-spy-on="show-me" hover-spy-off="hide-me"&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="col-md-12"&gt;
+            &lt;div class="page-header"&gt;
+              &lt;h4&gt;I am visible when you are hovering over this area!&lt;/h4&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="col-md-12 well well-small" hover-spy="custom-handler" hover-spy-on="hide-me" hover-spy-off="show-me"&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="col-md-12"&gt;
+            &lt;div class="page-header"&gt;
+              &lt;h4&gt;I am visible when you are not hovering over this area!&lt;/h4&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col-md-12 well well-small"&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="col-md-12"&gt;
+            &lt;div class="page-header"&gt;
+              &lt;h4&gt;{{message}}&lt;/h4&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+              </code>
+            </pre>
+          </tab>
+          <tab heading="JavaScript">
+            <pre class="prettyprint linenums">
+              <code class="language-js">
+angular.module('angular-hover-spy-example')
+  .controller('CustomHandlerExampleCtrl', [
+    '$log',
+    '$rootScope',
+    '$scope',
+    function ($log, $rootScope, $scope) {
+      $scope.message = 'I mirror the other elements hover effects!';
+      $rootScope.$on('abramz.custom-handler:hover-spy-mouseenter', function () {
+        $scope.message = 'You have to be really fast to see this!!';
+      });
+
+      $rootScope.$on('abramz.custom-handler:hover-spy-mouseenter-handled', function () {
+        $scope.message = 'See how this message changed when you hovered over the other element?';
+      });
+
+      $rootScope.$on('abramz.custom-handler:hover-spy-mouseleave', function () {
+        $scope.message = 'You have to be really fast to see this!!';
+      });
+
+      $rootScope.$on('abramz.custom-handler:hover-spy-mouseleave-handled', function () {
+        $scope.message = 'I mirror the other elements hover effects!';
+      });
+
+    }
+  ]);
+              </code>
+            </pre>
+          </tab>
+        </tabset>
+      </div>
+    </div>
+  </div>
+</div>
